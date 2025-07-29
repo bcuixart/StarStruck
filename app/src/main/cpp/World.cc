@@ -10,7 +10,7 @@ World::World()
 
 	for (int i = 0; i <= OBSTACLE_TEXTURES; ++i) {
 		std::stringstream ss;
-		ss << "Assets/Textures/Asteroid/Obstacle_Asteroid_"
+		ss << "Textures/Asteroid/Obstacle_Asteroid_"
 			<< std::setfill('0') << std::setw(3) << (i)
 			<< ".png";
 		obstacleTextures[i] = LoadTexture(ss.str().c_str());

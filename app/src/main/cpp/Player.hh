@@ -64,12 +64,12 @@ private:
 	Vector2 playerPositionPropeller002 = { 0, 0 };
 	Vector2 playerPositionTop = { 0, 0 };
 
-	const Texture playerBodyMainTexture = LoadTexture("Assets/Textures/Player_Body_Main.png");
-	const Texture playerBodyWindowTexture = LoadTexture("Assets/Textures/Player_Body_Window.png");
-	const Texture playerBodyPropeller000Texture = LoadTexture("Assets/Textures/Player_Body_Propeller_000.png");
-	const Texture playerBodyPropeller001Texture = LoadTexture("Assets/Textures/Player_Body_Propeller_001.png");
-	const Texture playerBodyPropeller002Texture = LoadTexture("Assets/Textures/Player_Body_Propeller_002.png");
-	const Texture playerBodyTopTexture = LoadTexture("Assets/Textures/Player_Body_Top.png");
+	const Texture playerBodyMainTexture = LoadTexture("Textures/Player_Body_Main.png");
+	const Texture playerBodyWindowTexture = LoadTexture("Textures/Player_Body_Window.png");
+	const Texture playerBodyPropeller000Texture = LoadTexture("Textures/Player_Body_Propeller_000.png");
+	const Texture playerBodyPropeller001Texture = LoadTexture("Textures/Player_Body_Propeller_001.png");
+	const Texture playerBodyPropeller002Texture = LoadTexture("Textures/Player_Body_Propeller_002.png");
+	const Texture playerBodyTopTexture = LoadTexture("Textures/Player_Body_Top.png");
 
 	const Color playerBodyColorLight = { 213, 167, 247, 255 };
 	const Color playerBodyColorDark = { 189, 129, 237, 255 };
@@ -78,20 +78,20 @@ private:
 	const int textureHeight = playerBodyMainTexture.height;
 
 	const Texture fireTextures[FIRE_TEXTURES] = {
-		LoadTexture("Assets/Textures/Player_Fire_Accelerate_000.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Accelerate_001.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Accelerate_002.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Accelerate_003.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_000.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_001.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_002.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_003.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_004.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_005.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_006.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_007.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_008.png"),
-		LoadTexture("Assets/Textures/Player_Fire_Moving_009.png"),
+		LoadTexture("Textures/Player_Fire_Accelerate_000.png"),
+		LoadTexture("Textures/Player_Fire_Accelerate_001.png"),
+		LoadTexture("Textures/Player_Fire_Accelerate_002.png"),
+		LoadTexture("Textures/Player_Fire_Accelerate_003.png"),
+		LoadTexture("Textures/Player_Fire_Moving_000.png"),
+		LoadTexture("Textures/Player_Fire_Moving_001.png"),
+		LoadTexture("Textures/Player_Fire_Moving_002.png"),
+		LoadTexture("Textures/Player_Fire_Moving_003.png"),
+		LoadTexture("Textures/Player_Fire_Moving_004.png"),
+		LoadTexture("Textures/Player_Fire_Moving_005.png"),
+		LoadTexture("Textures/Player_Fire_Moving_006.png"),
+		LoadTexture("Textures/Player_Fire_Moving_007.png"),
+		LoadTexture("Textures/Player_Fire_Moving_008.png"),
+		LoadTexture("Textures/Player_Fire_Moving_009.png"),
 	};
 	const Color playerFireColor = { 229, 197, 247, 255 };
 	float currentFireTexture = -1;

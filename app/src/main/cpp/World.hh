@@ -55,7 +55,7 @@ private:
 	const float CHUNK_OBJECT_SIZE = 150;
 	const int PLAYER_LOAD_CHUNK_RADIUS = 2;
 
-	const Texture coinTexture = LoadTexture("Assets/Textures/Coin_001.png");
+	const Texture coinTexture = LoadTexture("Textures/Coin_001.png");
 	const int OBSTACLE_TEXTURES = 120;
 	vector<Texture> obstacleTextures = vector<Texture>(OBSTACLE_TEXTURES + 1);
 
