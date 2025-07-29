@@ -16,6 +16,20 @@ GameManager::GameManager()
 	PrepareGame();
 }
 
+int GameManager::GetRandomNumber(int max) const
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, max);
+
+    return dis(gen);
+}
+
+int GameManager::GetRandomInRange(int min, int max) const
+{
+    return min + GetRandomNumber(max - min);
+}
+
 GameManager::GameState GameManager::GetGameState() const 
 {
 	return currentState;
@@ -35,10 +49,7 @@ void GameManager::PrepareGame()
 {
 	world->ClearWorld();
 
-	std::random_device rd;
-	std::mt19937 gen(rd());
-
-	unsigned int randomSeed = static_cast<unsigned int>(gen());
+	int randomSeed = GetRandomNumber(1000000);
 	if (DEBUG_PRINT_SEED) std::cout << "Seed:" << randomSeed << std::endl;
 
 	world->Prepare(randomSeed);
@@ -50,6 +61,10 @@ void GameManager::PrepareGame()
 
 void GameManager::CollectCoin() 
 {
+    SetSoundPitch(coinSounds[coinSoundIndex], (float) GetRandomInRange(13, 18) / 10.f);
+    PlaySound(coinSounds[coinSoundIndex]);
+    coinSoundIndex = (coinSoundIndex + 1) % COIN_SOUNDS;
+
 	++coinsCurrent;
 }
 
@@ -59,7 +74,9 @@ void GameManager::KillPlayer()
 	{
 		player->KillPlayer();
 
-		playerDeadTimeElapsed = 0;
+        StopMusicStream(music001);
+
+        playerDeadTimeElapsed = 0;
 		currentState = PlayerDead;
 
 		coinsTotal += coinsCurrent;
@@ -69,7 +86,11 @@ void GameManager::KillPlayer()
 
 void GameManager::Update_MainMenu(const float deltaTime)
 {
-	if (GetIsKeyPressed()) currentState = Playing;
+	if (GetIsKeyPressed())
+    {
+        PlayMusicStream(music001);
+        currentState = Playing;
+    }
 }
 
 void GameManager::Update_Playing(const float deltaTime)
@@ -90,6 +111,8 @@ void GameManager::Update_PlayerDead(const float deltaTime)
 void GameManager::Update(const int width, const int height) 
 {
 	float deltaTime = GetFrameTime();
+
+    UpdateMusicStream(music001);
 
 	switch (currentState) 
 	{

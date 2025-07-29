@@ -13,6 +13,7 @@
 int main() 
 {
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Dorga");
+    InitAudioDevice();
 
 	SetTargetFPS(60);
 
@@ -27,5 +28,6 @@ int main()
 		gameManager->Render(width, height);
 	}
 
+    CloseAudioDevice();
 	CloseWindow();
 }

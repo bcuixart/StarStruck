@@ -25,7 +25,10 @@ public:
 	void Update(const int width, const int height);
 	void Render(const int width, const int height);
 
-	bool GetIsKeyDown() const;
+    int GetRandomNumber(int max) const;
+    int GetRandomInRange(int min, int max) const;
+
+    bool GetIsKeyDown() const;
 	bool GetIsKeyPressed() const;
 
 	void CollectCoin();
@@ -44,6 +47,16 @@ private:
 	Player* player;
 	CameraManager* camera;
 	World* world;
+
+    const int COIN_SOUNDS = 3;
+    int coinSoundIndex = 0;
+    vector<Sound> coinSounds = {
+        LoadSound("Sounds/Coin_000.mp3"),
+        LoadSound("Sounds/Coin_001.mp3"),
+        LoadSound("Sounds/Coin_002.mp3"),
+    };
+
+    Music music001 = LoadMusicStream("Sounds/Music_001.mp3");
 
 	GameState currentState = MainMenu;
 
