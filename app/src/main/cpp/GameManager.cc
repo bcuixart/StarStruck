@@ -9,6 +9,7 @@ GameManager::GameManager()
 	player = new Player();
 	camera = new CameraManager();
 	world = new World();
+    uiManager = new UIManager();
 
 	playerRadius = player->getPlayerRadius();
 
@@ -28,6 +29,21 @@ int GameManager::GetRandomNumber(int max) const
 int GameManager::GetRandomInRange(int min, int max) const
 {
     return min + GetRandomNumber(max - min);
+}
+
+int GameManager::GetCoinsCurrent() const
+{
+    return coinsCurrent;
+}
+
+int GameManager::GetCoinsHighscore() const
+{
+    return coinsHighscore;
+}
+
+int GameManager::GetCoinsTotal() const
+{
+    return coinsTotal;
 }
 
 GameManager::GameState GameManager::GetGameState() const 
@@ -137,7 +153,9 @@ void GameManager::Update(const int width, const int height)
 
 void GameManager::Render(const int width, const int height) 
 {
-	ClearBackground({ 133, 60, 217, 255 });
+    float deltaTime = GetFrameTime();
+
+    ClearBackground({ 133, 60, 217, 255 });
 	BeginDrawing();
 
 	camera->MBeginMode2D();
@@ -147,11 +165,7 @@ void GameManager::Render(const int width, const int height)
 
 	EndMode2D();
 
-	char buff[100];
-	sprintf(buff, "Coins: %d", coinsCurrent);
-	DrawText(buff, width / 2, 0, 25, WHITE);
-
-	DrawFPS(0, 0);
+    uiManager->Render(GetScreenWidth(), GetScreenHeight(), deltaTime);
 
 	EndDrawing();
 }

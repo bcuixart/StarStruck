@@ -10,6 +10,7 @@
 #include "Player.hh"
 #include "Camera.hh"
 #include "World.hh"
+#include "UIManager.hh"
 
 using namespace std;
 
@@ -27,6 +28,10 @@ public:
 
     int GetRandomNumber(int max) const;
     int GetRandomInRange(int min, int max) const;
+
+    int GetCoinsCurrent() const;
+    int GetCoinsHighscore() const;
+    int GetCoinsTotal() const;
 
     bool GetIsKeyDown() const;
 	bool GetIsKeyPressed() const;
@@ -47,6 +52,7 @@ private:
 	Player* player;
 	CameraManager* camera;
 	World* world;
+    UIManager* uiManager;
 
     const int COIN_SOUNDS = 3;
     int coinSoundIndex = 0;
