@@ -145,13 +145,13 @@ void Player::Render()
 	Rectangle destFire = { playerPositionMain.x, playerPositionMain.y, (float)textureWidth / 8, (float)textureHeight / 8 };
 	Vector2 origin = { (float)textureWidth * 1 / 16, (float)textureHeight * 1 / 16 };
 
-	RenderBodyPart(playerBodyMainTexture, playerPositionMain, source, origin, playerBodyColorLight);
-	RenderBodyPart(playerBodyWindowTexture, playerPositionMain, source, origin, playerBodyColorDark);
-	RenderBodyPart(playerBodyPropeller000Texture, playerPositionPropeller000, source, origin, playerBodyColorDark);
-	RenderBodyPart(playerBodyPropeller001Texture, playerPositionPropeller001, source, origin, playerBodyColorDark);
-	RenderBodyPart(playerBodyPropeller002Texture, playerPositionPropeller002, source, origin, playerBodyColorDark);
-	RenderBodyPart(playerBodyTopTexture, playerPositionTop, source, origin, playerBodyColorDark);
-	if (currentFireTexture != -1) DrawTexturePro(fireTextures[(int)currentFireTexture], source, destFire, origin, -playerRotation + 90, playerFireColor);
+	RenderBodyPart(playerBodyMainTexture, playerPositionMain, source, origin, GameManager::instance->colorManager->GetRocketBaseColor());
+	RenderBodyPart(playerBodyWindowTexture, playerPositionMain, source, origin, GameManager::instance->colorManager->GetRocketWindowColor());
+	RenderBodyPart(playerBodyPropeller000Texture, playerPositionPropeller000, source, origin, GameManager::instance->colorManager->GetRocketPropeller000Color());
+	RenderBodyPart(playerBodyPropeller001Texture, playerPositionPropeller001, source, origin, GameManager::instance->colorManager->GetRocketPropeller001Color());
+	RenderBodyPart(playerBodyPropeller002Texture, playerPositionPropeller002, source, origin, GameManager::instance->colorManager->GetRocketPropeller002Color());
+	RenderBodyPart(playerBodyTopTexture, playerPositionTop, source, origin, GameManager::instance->colorManager->GetRocketTopColor());
+	if (currentFireTexture != -1) DrawTexturePro(fireTextures[(int)currentFireTexture], source, destFire, origin, -playerRotation + 90, GameManager::instance->colorManager->GetRocketFireColor());
 
 	if (drawDirectionPoints) 
 	{

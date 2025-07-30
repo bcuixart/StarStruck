@@ -1,5 +1,7 @@
 #include "WorldObject.hh"
 
+#include "GameManager.hh"
+
 WorldObject::WorldObject(Vector2 _position, float _rotation, float _scale, const vector<Texture>& _textures)
 {
 	position = _position;
@@ -36,5 +38,5 @@ int WorldObject::CheckPlayerCollision(const Vector2& playerPos, const float play
 
 void WorldObject::Render() 
 {
-	DrawCircle(position.x, position.y, scale, { 229, 197, 247, 255 });
+	DrawCircle(position.x, position.y, scale, GameManager::instance->colorManager->GetBGStarColor());
 }

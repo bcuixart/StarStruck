@@ -1,4 +1,5 @@
 #include "Obstacle.hh"
+#include "GameManager.hh"
 
 Obstacle::Obstacle(Vector2 _position, float _rotation, float _scale, const vector<Texture>& _textures)
 	: WorldObject(_position, _rotation, _scale, _textures)
@@ -34,8 +35,8 @@ void Obstacle::Render()
 		(float)textures[0].height * scale / 2
 	};
 
-	DrawTexturePro(textures[0], sourceRec, destRec, origin, rotation, COLOR_BASE);
-	DrawTexturePro(textures[(int)currentTexture], sourceRec, destRec, origin, rotation, COLOR_CRATERS);
+	DrawTexturePro(textures[0], sourceRec, destRec, origin, rotation, GameManager::instance->colorManager->GetAsteroid000Color());
+	DrawTexturePro(textures[(int)currentTexture], sourceRec, destRec, origin, rotation, GameManager::instance->colorManager->GetAsteroid001Color());
 
 	if (DEBUG_SHOW_OBJECTS_HITBOX) DrawCircleLines(position.x, position.y, scale * OBSTACLE_RADIUS_SCALE_MULTIPLIER, RED);
 }

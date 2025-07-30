@@ -11,6 +11,7 @@
 #include "Camera.hh"
 #include "World.hh"
 #include "UIManager.hh"
+#include "ColorManager.hh"
 
 using namespace std;
 
@@ -40,6 +41,8 @@ public:
 	void KillPlayer();
 
 	static GameManager* instance;
+
+    ColorManager* colorManager;
 
 protected:
 

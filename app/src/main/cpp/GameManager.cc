@@ -10,6 +10,7 @@ GameManager::GameManager()
 	camera = new CameraManager();
 	world = new World();
     uiManager = new UIManager();
+    colorManager = new ColorManager();
 
 	playerRadius = player->getPlayerRadius();
 
@@ -120,6 +121,7 @@ void GameManager::Update_PlayerDead(const float deltaTime)
 	if (playerDeadTimeElapsed >= PLAYER_DEAD_RETRY_TIME && GetIsKeyPressed())
 	{
 		PrepareGame();
+        colorManager->NextPalette();
 		currentState = MainMenu;
 	}
 }
@@ -155,7 +157,7 @@ void GameManager::Render(const int width, const int height)
 {
     float deltaTime = GetFrameTime();
 
-    ClearBackground({ 133, 60, 217, 255 });
+    ClearBackground(colorManager->GetBackgroundColor());
 	BeginDrawing();
 
 	camera->MBeginMode2D();

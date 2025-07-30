@@ -1,4 +1,5 @@
 #include "Coin.hh"
+#include "GameManager.hh"
 
 Coin::Coin(Vector2 _position, float _rotation, float _scale, const vector<Texture>& _textures)
 	: WorldObject(_position, _rotation, _scale, _textures)
@@ -31,7 +32,7 @@ void Coin::Render()
 		(float)textures[0].height * scale / 2
 	};
 
-	DrawTexturePro(textures[0], sourceRec, destRec, origin, rotation, COIN_COLOR);
+	DrawTexturePro(textures[0], sourceRec, destRec, origin, rotation, GameManager::instance->colorManager->GetCoinColor());
 
     if (DEBUG_SHOW_OBJECTS_HITBOX) DrawCircleLines(position.x, position.y, scale * COIN_RADIUS_SCALE_MULTIPLIER, GREEN);
 }
