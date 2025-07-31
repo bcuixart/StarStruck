@@ -93,26 +93,26 @@ private:
 
     const Color COLORS_BGSTARS[BACKGROUND_PALETTES] = {
             {229, 197, 247, 255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
-            {0,0,0,255},
+            {106,134,197,255},
+            {44,125,231,255},
+            {44,125,231,255},
+            {43,166,197,255},
+            {106,194,197,255},
+            {37,197,163,255},
+            {37,197,80,255},
+            {128,197,37,255},
+            {128,197,37,255},
+            {170,197,51,255},
+            {197,189,37,255},
+            {197,160,24,255},
+            {197,108,0,255},
+            {197,79,0,255},
+            {197,53,0,255},
+            {197,13,0,255},
+            {197,0,99,255},
+            {197,85,186,255},
+            {191,0,197,255},
+            {127,127,127,255},
     };
 
     const Color COLORS_ASTEROID_000[BACKGROUND_PALETTES] = {
@@ -164,16 +164,15 @@ private:
     };
 
     int colorSelectedRocketBase = 0;
-    int colorSelectedRocketTop = 0;
-    int colorSelectedRocketWindow = 0;
-    int colorSelectedRocketPropeller000 = 0;
-    int colorSelectedRocketPropeller001 = 0;
-    int colorSelectedRocketPropeller002 = 0;
-    int colorSelectedRocketFire = 0;
+    int colorSelectedRocketTop = 1;
+    int colorSelectedRocketWindow = 1;
+    int colorSelectedRocketPropeller000 = 1;
+    int colorSelectedRocketPropeller001 = 1;
+    int colorSelectedRocketPropeller002 = 1;
+    int colorSelectedRocketFire = 1;
 
     int colorSelectedBackground = 0;
     int colorSelectedCoin = 0;
-    int colorSelectedBGStars = 0;
     int colorSelectedAsteroid = 0;
 
 };

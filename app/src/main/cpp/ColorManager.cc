@@ -59,7 +59,7 @@ Color ColorManager::GetCoinColor() const
 
 Color ColorManager::GetBGStarColor() const
 {
-    return COLORS_BGSTARS[colorSelectedBGStars];
+    return COLORS_BGSTARS[colorSelectedBackground];
 }
 
 Color ColorManager::GetAsteroid000Color() const
